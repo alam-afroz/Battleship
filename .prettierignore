@@ -1,0 +1,12 @@
+# Build output (Webpack outputs to dist, not build)
+dispackage-lock.json
+t/
+
+# Dependencies
+node_modules/
+
+# Package locks (npm manages this; formatting creates massive diffs)
+
+# Test coverage (useful when you add tests for Battleship)
+coverage/
+

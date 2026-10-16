@@ -1,36 +1,40 @@
 {
-  "name": "template_repo",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "dev": "webpack serve",
-    "deploy": "git subtree push --prefix dist origin gh-pages"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alam-afroz/template_repo.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "module",
-  "bugs": {
-    "url": "https://github.com/alam-afroz/template_repo/issues"
-  },
-  "homepage": "https://github.com/alam-afroz/template_repo#readme",
-  "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "css-loader": "^7.1.4",
-    "eslint": "^10.6.0",
-    "globals": "^17.7.0",
-    "html-loader": "^5.1.0",
-    "html-webpack-plugin": "^5.6.7",
-    "style-loader": "^4.0.0",
-    "webpack": "^5.108.3",
-    "webpack-cli": "^7.1.0",
-    "webpack-dev-server": "^5.2.6"
-  }
+    "name": "Battleship",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest",
+        "build": "webpack",
+        "dev": "webpack serve",
+        "deploy": "git subtree push --prefix dist origin gh-pages"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/alam-afroz/template_repo.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "module",
+    "bugs": {
+        "url": "https://github.com/alam-afroz/template_repo/issues"
+    },
+    "homepage": "https://github.com/alam-afroz/template_repo#readme",
+    "devDependencies": {
+        "@babel/preset-env": "^7.29.7",
+        "@eslint/js": "^10.0.1",
+        "css-loader": "^7.1.4",
+        "eslint": "^10.12.0",
+        "eslint-config-prettier": "^10.1.8",
+        "globals": "^17.13.0",
+        "html-loader": "^5.1.0",
+        "html-webpack-plugin": "^5.6.7",
+        "jest": "^30.5.2",
+        "prettier": "3.9.10",
+        "style-loader": "^4.0.0",
+        "webpack": "^5.108.3",
+        "webpack-cli": "^7.1.0",
+        "webpack-dev-server": "^5.2.6"
+    }
 }
