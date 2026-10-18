@@ -1,0 +1,151 @@
+nav {
+    grid-row: 2/3;
+    height: 100%;
+    display: grid;
+
+    grid-template-columns: 30% 40% 30%;
+}
+
+nav ul {
+    grid-column: 2/3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+nav ul li {
+    list-style: none;
+}
+nav ul li a {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 400;
+
+    text-decoration: underline;
+    color: var(--accent-color1-01);
+}
+nav ul li a:hover {
+    color: var(--accent-color2-07);
+}
+#form_container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    justify-content: center;
+}
+#player1_form {
+    justify-self: end;
+    background-color: var(--accent-color2-03);
+    display: grid;
+
+    width: 480px;
+    height: 480px;
+    justify-content: center;
+}
+#player1_form:hover,
+#player2_form:hover {
+    box-shadow: 10px 10px 16px rgba(0, 0, 0, 0.547);
+}
+#player1_name {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+label[for="player1"] {
+    align-self: center;
+    justify-self: center;
+}
+#player1 {
+    all: unset;
+    margin-right: 16px;
+    border-bottom: 2px solid var(--accent-color1-05);
+    color: var(--accent-color1-05);
+}
+#button_player1 {
+    all: unset;
+    grid-row: 2/3;
+    grid-column: 1/3;
+    /* width: 64px;
+    height: 32px; */
+    text-align: center;
+    background-color: var(--accent-color1-05);
+    color: var(--accent-color2-04);
+}
+
+#button_player1:hover {
+    cursor: pointer;
+    background-color: var(--accent-color2-04);
+    color: var(--accent-color1-05);
+    outline: 2px solid var(--accent-color1-05);
+}
+#player2_form {
+    justify-self: start;
+    background-color: var(--accent-color2-03);
+    display: grid;
+    width: 480px;
+    height: 480px;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 73% 9% 9% 9%;
+}
+#img_bot {
+    grid-column: 1/4;
+}
+#human,
+#bot {
+    all: unset;
+    grid-row: 2/3;
+    margin: 8px;
+    text-align: center;
+    background-color: var(--accent-color1-05);
+    color: var(--accent-color2-04);
+}
+#human:hover,
+#bot:hover {
+    cursor: pointer;
+    background-color: var(--accent-color2-04);
+    color: var(--accent-color1-05);
+    outline: 2px solid var(--accent-color1-05);
+}
+#player2_name {
+    grid-row: 3/4;
+    grid-column: 1/4;
+    display: grid;
+
+    grid-template-columns: 20% 30% 30% 20%;
+    padding-bottom: 8px;
+    align-items: end;
+}
+label[for="opponent"] {
+    /* align-self: center; */
+    grid-column: 2/3;
+    justify-self: center;
+}
+#opponent {
+    all: unset;
+    grid-column: 3/4;
+
+    margin-right: 16px;
+    border-bottom: 2px solid var(--accent-color1-05);
+    color: var(--accent-color1-05);
+}
+#button_player2 {
+    all: unset;
+    grid-row: 4/5;
+    grid-column: 1/4;
+
+    text-align: center;
+    background-color: var(--accent-color1-05);
+    color: var(--accent-color2-04);
+}
+
+#button_player2:hover {
+    cursor: pointer;
+    background-color: var(--accent-color2-04);
+    color: var(--accent-color1-05);
+    outline: 2px solid var(--accent-color1-05);
+}
+label {
+    color: var(--accent-color1-05);
+}

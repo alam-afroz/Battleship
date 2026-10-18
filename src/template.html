@@ -3,7 +3,54 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Battleship</title>
     </head>
-    <body></body>
+    <body>
+        <header><p id="title">BATTLESHIP</p></header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#about">Rules</a></li>
+                <li><a href="#about">Github</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <div id="form_container">
+                <form id="player1_form" action="#">
+                    <img src="./assets/human.png" alt="human_image" />
+                    <p id="player1_name">
+                        <label for="player1"> Player Name (You): </label>
+                        <input
+                            type="text"
+                            id="player1"
+                            name="player1"
+                            placeholder="Player name"
+                            required
+                        />
+                        <button type="submit" id="button_player1">Enter</button>
+                    </p>
+                </form>
+                <form action="#" id="player2_form">
+                    <img src="./assets/bot.png" alt="" id="img_bot" />
+                    <button id="human">Human</button>
+                    <button id="bot">Bot</button>
+                    <p id="player2_name">
+                        <label for="opponent"> Opponent </label>
+                        <input
+                            type="text"
+                            id="opponent"
+                            name="opponent"
+                            placeholder="Bot"
+                        />
+                    </p>
+                    <button type="submit" id="button_player2">Enter</button>
+                </form>
+            </div>
+        </div>
+        <footer>
+            <div id="footer">
+                <p></p>
+            </div>
+        </footer>
+    </body>
 </html>
