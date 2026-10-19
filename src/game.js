@@ -20,10 +20,33 @@ function game(player1Name, player2Name) {
     //         player1.gameboard.ships[i].hit();
     //     }
     // }
+    attack(player1, player2);
 }
+
+function attack(player1, player2) {
+    let board1 = document.querySelector(".board");
+    let board2 = document.querySelector(".board2");
+    board1.addEventListener("click", (e) => {
+        let box = e.target;
+        let r = box.dataset.row;
+        let c = box.dataset.column;
+        if (box.classList.contains("box")) {
+            player1.gameboard.receiveAttack(r, c);
+            // box.inert = true;
+        }
+        if (box.classList.contains("ship")) {
+            player1.gameboard.receiveAttack(r, c);
+            // box.inert = true;
+        }
+        board1.style.pointerEvents = "none";
+        console.clear();
+        console.table(player1.gameboard.grid);
+        reRenderGameboard(player1.gameboard, true);
+    });
+}
+
 function checkForFleetSunk(player1, player2) {
     let over = false;
-    // console.log(player1.gameboard.checkAllSunk());
     if (
         player1.gameboard.checkAllSunk() === true ||
         player2.gameboard.checkAllSunk() === true
@@ -57,11 +80,36 @@ function reRenderGameboard(gameboard, player1) {
         for (let i = 0; i < gameboard.grid.length; i++) {
             for (let j = 0; j < gameboard.grid[i].length; j++) {
                 const box = document.createElement("div");
-                if (gameboard.grid[i][j] != "") {
+                if (gameboard.grid[i][j] instanceof Ship) {
                     box.classList.add("ship");
-                } else {
+                }
+                if (gameboard.grid[i][j] === "") {
                     box.classList.add("box");
                 }
+                for (let k = 0; k < gameboard.missed.length; k++) {
+                    if (
+                        gameboard.missed[k][0] == i &&
+                        gameboard.missed[k][1] == j
+                    ) {
+                        console.log("r", i, gameboard.missed[k][0]);
+                        box.inert = true;
+                        box.className = "";
+                        box.classList.add("miss");
+                    }
+                }
+
+                for (let c = 0; c < gameboard.allHits.length; c++) {
+                    if (
+                        gameboard.allHits[c][0] == i &&
+                        gameboard.allHits[c][1] == j
+                    ) {
+                        box.inert = true;
+                        box.className = "";
+
+                        box.classList.add("hit");
+                    }
+                }
+
                 box.dataset.row = i;
                 box.dataset.column = j;
                 document.querySelector(".board").appendChild(box);
