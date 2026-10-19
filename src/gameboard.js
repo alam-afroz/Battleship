@@ -27,6 +27,7 @@ class Gameboard {
     receiveAttack(row, column) {
         if (this.grid[row][column] instanceof Ship) {
             this.grid[row][column].hit();
+            this.grid[row][column] = "hit";
         }
         if (this.grid[row][column] === "") {
             this.missed.push([row, column]);
@@ -40,6 +41,7 @@ class Gameboard {
                 sunked++;
             }
         }
+        console.log("sunked", sunked);
         if (sunked === this.ships.length) {
             return true;
         }
@@ -51,6 +53,9 @@ class Gameboard {
         }
         if (this.grid[row][column] === "miss") {
             return "miss";
+        }
+        if (this.grid[row][column] === "hit") {
+            return "hit";
         }
         if (this.grid[row][column] instanceof Ship) {
             return "ship";
