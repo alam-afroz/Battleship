@@ -9,6 +9,7 @@ class Gameboard {
             this.grid[i] = new Array(column).fill("");
         }
         this.missed = [];
+        this.allHits = [];
         this.ships = [];
     }
     placeShip(ship, row, column, alignment) {
@@ -27,7 +28,7 @@ class Gameboard {
     receiveAttack(row, column) {
         if (this.grid[row][column] instanceof Ship) {
             this.grid[row][column].hit();
-            this.grid[row][column] = "hit";
+            this.allHits.push([row, column]);
         }
         if (this.grid[row][column] === "") {
             this.missed.push([row, column]);
