@@ -30,6 +30,7 @@ class Gameboard {
         }
         if (this.grid[row][column] === "") {
             this.missed.push([row, column]);
+            this.grid[row][column] = "miss";
         }
     }
     checkAllSunk() {
@@ -43,6 +44,17 @@ class Gameboard {
             return true;
         }
         return false;
+    }
+    checkBox(row, column) {
+        if (this.grid[row][column] === "") {
+            return "empty";
+        }
+        if (this.grid[row][column] === "miss") {
+            return "miss";
+        }
+        if (this.grid[row][column] instanceof Ship) {
+            return "ship";
+        }
     }
 }
 
