@@ -12,7 +12,7 @@ class Ship {
             this.sunk = true;
             return this.sunk;
         }
-        return true;
+        return false;
     }
 }
 
