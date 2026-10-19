@@ -32,6 +32,18 @@ class Gameboard {
             this.missed.push([row, column]);
         }
     }
+    checkAllSunk() {
+        let sunked = 0;
+        for (let i = 0; i < this.ships.length; i++) {
+            if (this.ships[i].isSunk() === true) {
+                sunked++;
+            }
+        }
+        if (sunked === this.ships.length) {
+            return true;
+        }
+        return false;
+    }
 }
 
 export { Gameboard };
