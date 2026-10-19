@@ -15,11 +15,22 @@ function game(player1Name, player2Name) {
     setShips(player2);
     reRenderGameboard(player1.gameboard, true);
     reRenderGameboard(player2.gameboard, false);
-    for (let i = 0; i < player1.gameboard.ships.length; i++) {
-        while (player1.gameboard.ships[i].isSunk() === false) {
-            player1.gameboard.ships[i].hit();
-        }
+    // for (let i = 0; i < player1.gameboard.ships.length; i++) {
+    //     while (player1.gameboard.ships[i].isSunk() === false) {
+    //         player1.gameboard.ships[i].hit();
+    //     }
+    // }
+}
+function checkForFleetSunk(player1, player2) {
+    let over = false;
+    // console.log(player1.gameboard.checkAllSunk());
+    if (
+        player1.gameboard.checkAllSunk() === true ||
+        player2.gameboard.checkAllSunk() === true
+    ) {
+        over = true;
     }
+    return over;
 }
 
 // this function should be deleted later and a better system should be implemented
