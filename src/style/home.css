@@ -122,14 +122,20 @@ label[for="opponent"] {
     /* align-self: center; */
     grid-column: 2/3;
     justify-self: center;
+    align-self: center;
+}
+#player1 {
+    height: 80%;
+    align-self: center;
 }
 #opponent {
     all: unset;
-    grid-column: 3/4;
-
+    grid-column: 3/5;
+    height: 90%;
+    width: 80%;
     margin-right: 16px;
     border-bottom: 2px solid var(--accent-color1-05);
-    color: var(--accent-color1-05);
+    color: var(--accent-color1-03);
 }
 #button_player2 {
     all: unset;
@@ -138,6 +144,7 @@ label[for="opponent"] {
 
     text-align: center;
     background-color: var(--accent-color1-05);
+
     color: var(--accent-color2-04);
 }
 

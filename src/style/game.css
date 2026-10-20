@@ -2,11 +2,15 @@
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 90% 5% 5%;
 }
 .board {
-    width: 90%;
-    height: 90%;
-    align-self: center;
+    /* cursor: pointer; */
+    width: 80%;
+    height: 95%;
+    grid-row: 1/2;
+    margin: 12px;
+    align-self: start;
     justify-self: center;
     grid-column: 2/3;
 
@@ -23,9 +27,12 @@
     outline: 2px solid var(--accent-color1-07);
 }
 .board2 {
-    width: 90%;
-    height: 90%;
-    align-self: center;
+    /* cursor: pointer; */
+    width: 80%;
+    height: 95%;
+    grid-row: 1/2;
+    margin-top: 12px;
+    align-self: start;
     justify-self: center;
     grid-column: 1/2;
     grid-row: 1/2;
@@ -40,4 +47,20 @@
 .ship_opp {
     background-color: var(--accent-color1-03);
     outline: 2px solid var(--accent-color1-07);
+}
+.miss {
+    background-color: var(--accent-color1-00);
+    outline: 2px solid var(--accent-color1-07);
+}
+.miss_opp {
+    background-color: var(--accent-color2-00);
+    outline: 2px solid var(--accent-color2-07);
+}
+.hit {
+    background-color: var(--success-light);
+    outline: 2px solid var(--success-darker);
+}
+.hit_opp {
+    background-color: var(--error-light);
+    outline: 2px solid var(--error-darker);
 }
