@@ -16,10 +16,10 @@ function takeUserInput() {
         console.log(player1Name);
         // changing input box style after filling up
         document.getElementById("player1").style.outline =
-            "3px solid var(--success-dark)";
+            "2px solid var(--success-dark)";
         document.getElementById("player1").style.border = "none";
         document.getElementById("player1").style.textAlign = "center";
-        document.getElementById("player1").style.borderRadius = "12px ";
+
         // changing command to fill opponent details
         document.getElementById("command").textContent = "Choose Opponent";
         // choosed bot
@@ -27,7 +27,8 @@ function takeUserInput() {
             document.getElementById("opponent").style.textAlign = "center";
             document.getElementById("opponent").style.outline =
                 "2px solid var(--success-dark)";
-            document.getElementById("opponent").style.color = "black";
+            document.getElementById("opponent").style.color =
+                "var(--accent-color1-main)";
             document.getElementById("opponent").style.border = "none";
             document.getElementById("opponent").disabled = true;
             document.getElementById("command").textContent =

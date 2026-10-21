@@ -35,10 +35,29 @@ function attackHandler(player1, player2) {
         let c = box.dataset.column;
 
         // land attack
-        giveCommand(player1);
+        // giveCommand(player1);
         landAttack(box, player1, r, c, board1, board2, player2);
 
-        changeTurn(player1, board1, board2, player2);
+        // change board1 to board
+
+        // change command
+
+        //rerender board
+        // check win condition
+
+        //board2 event
+    });
+    board2.addEventListener("click", (e) => {
+        let box = e.target;
+        // console.log(box, "box");
+        // return;
+        let r = box.dataset.row;
+        let c = box.dataset.column;
+
+        // land attack
+        // giveCommand(player1);
+
+        changeTurn(box, player1, r, c, board1, board2, player2);
         // change board1 to board
 
         // change command
@@ -244,35 +263,33 @@ function removeDuplicates(array) {
     });
 }
 
-function changeTurn(player1, board1, board2, player2) {
-    board2.addEventListener("click", (e) => {
-        const box = e.target;
-        const r = box.dataset.row;
-        const c = box.dataset.column;
-        if (
-            box.classList.contains("miss_opp") ||
-            box.classList.contains("hit_opp")
-        ) {
-            document.getElementById("command").textContent =
-                "Where you clicking, bro ?";
-            return;
-        }
-        if (box.classList.contains("box_opp")) {
-            player2.gameboard.receiveAttack(r, c);
-            updateCommand(player2);
-        }
-        if (box.classList.contains("ship_opp")) {
-            player2.gameboard.receiveAttack(r, c);
-            updateCommand(player2);
-        }
-        boardChange(board2, board1, player2);
-        updateCommand(player1);
-        reRenderGameboard(player2.gameboard, false);
-        let temp = removeDuplicates(player2.gameboard.allHits);
-        player2.gameboard.allHits = temp;
-        if (checkForWin(player2, board2)) return;
+function changeTurn(box, player1, r, c, board1, board2, player2) {
+    // const box = e.target;
+    // const r = box.dataset.row;
+    // const c = box.dataset.column;
+    if (
+        box.classList.contains("miss_opp") ||
+        box.classList.contains("hit_opp")
+    ) {
+        document.getElementById("command").textContent =
+            "Where you clicking, bro ?";
         return;
-    });
+    }
+    if (box.classList.contains("box_opp")) {
+        player2.gameboard.receiveAttack(r, c);
+        updateCommand(player2);
+    }
+    if (box.classList.contains("ship_opp")) {
+        player2.gameboard.receiveAttack(r, c);
+        updateCommand(player2);
+    }
+    boardChange(board2, board1, player2);
+    updateCommand(player1);
+    reRenderGameboard(player2.gameboard, false);
+    let temp = removeDuplicates(player2.gameboard.allHits);
+    player2.gameboard.allHits = temp;
+    if (checkForWin(player2, board2)) return;
+    return;
 }
 function boardChange(currBoard, nextBoard, player) {
     // player parameter is only used for console.log() after the game is finished remove it.
